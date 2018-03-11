@@ -134,22 +134,19 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>4</item>
+	<item>3</item>
+        <item>6</item>
 	<item>8</item>
-	<item>16</item>
-	<item>32</item>
-        <item>64</item>
-        <item>128</item>
-        <item>170</item>
-        <item>220</item>
-        <item>256</item>
-        <item>384</item>
+	<item>12</item>
+	<item>14</item>
+        <item>25</item>
+        <item>40</item>
+        <item>55</item>
+        <item>75</item>
+        <item>170</item> <!-- the ambient light sensor on f5121 is very sensitive apparently, hence this large gap -->
+        <item>200</item>
+        <item>250</item>
         <item>512</item>
-        <item>768</item>
-        <item>1024</item>
-        <item>1536</item>
-        <item>2048</item>
-        <item>4096</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -158,27 +155,24 @@
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>1</item> <!-- 0 -->
-        <item>2</item>  <!-- 4 -->
-        <item>4</item>   <!--    8 -->
-	<item>8</item>    <!--   16 -->
-	<item>16</item>    <!--   32 -->
-        <item>32</item>   <!--   64 -->
-        <item>64</item>   <!--  128 -->
-        <item>80</item>   <!--  170 -->
-        <item>96</item>   <!--  220 -->
-        <item>112</item>  <!--  256 -->
-        <item>128</item>  <!--  384 -->
-        <item>144</item>  <!--  512 -->
-        <item>176</item>  <!--  768 -->
-        <item>196</item>  <!-- 1024 -->
-        <item>208</item>  <!-- 1536 -->
-        <item>224</item>  <!-- 2048 -->
-        <item>255</item>  <!-- 4096 -->
-    </integer-array>
+        <item>1</item>  <!-- 3 -->
+        <item>4</item>   <!--    6 -->
+	<item>8</item>    <!--   8 -->
+	<item>16</item>    <!--   12 -->
+        <item>24</item>   <!--   14 -->
+        <item>32</item>   <!--  25 -->
+        <item>48</item>   <!--  40 -->
+        <item>64</item>   <!--  55 -->
+        <item>100</item>  <!--  75 -->
+        <item>128</item>  <!--  170 -->
+        <item>200</item>  <!-- 200 -->
+        <item>235</item>  <!-- 250 -->
+        <item>245</item>  <!-- 512; maximum value. 255 on the f5121 washes out colors it's so bright -->
+     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
@@ -204,8 +198,8 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2500</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">5000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">3000</integer>
 
     <!-- Initial light sensor event rate in milliseconds for automatic brightness control. This is
          used for obtaining the first light sample when the device stops dozing.
@@ -214,7 +208,7 @@
     <integer name="config_autoBrightnessInitialLightSensorRate">250</integer>
 
     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
-    <integer name="config_autoBrightnessLightSensorRate">1000</integer>
+    <integer name="config_autoBrightnessLightSensorRate">2000</integer>
 
 
     <!-- Period of time in which to consider light samples in milliseconds. -->
@@ -236,7 +230,7 @@
     <!-- Flag indicating whether all audio streams should be mapped to
          one single stream. If true, all audio streams are mapped to
          STREAM_MUSIC as if it's on TV platform. -->
-    <bool name="config_single_volume">true</bool>
+    <bool name="config_single_volume">false</bool>
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->

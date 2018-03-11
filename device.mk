@@ -98,7 +98,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=480 \
-    ro.usb.pid_suffix=1E0
+    ro.usb.pid_suffix=1E0 \
+    ro.config.media_vol_steps=40 \
+    ro.config.vc_call_vol_steps=15
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/loire/platform.mk)
