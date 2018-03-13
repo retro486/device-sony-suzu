@@ -136,16 +136,9 @@
     <integer-array name="config_autoBrightnessLevels">
 	<item>3</item>
         <item>6</item>
-	<item>8</item>
-	<item>12</item>
-	<item>14</item>
-        <item>25</item>
-        <item>40</item>
-        <item>55</item>
         <item>75</item>
         <item>170</item> <!-- the ambient light sensor on f5121 is very sensitive apparently, hence this large gap -->
-        <item>200</item>
-        <item>250</item>
+        <item>450</item>
         <item>512</item>
     </integer-array>
 
@@ -157,17 +150,10 @@
         <item>1</item> <!-- 0 -->
         <item>1</item>  <!-- 3 -->
         <item>4</item>   <!--    6 -->
-	<item>8</item>    <!--   8 -->
-	<item>16</item>    <!--   12 -->
-        <item>24</item>   <!--   14 -->
-        <item>32</item>   <!--  25 -->
-        <item>48</item>   <!--  40 -->
-        <item>64</item>   <!--  55 -->
-        <item>100</item>  <!--  75 -->
+        <item>75</item>  <!--  75 -->
         <item>128</item>  <!--  170 -->
-        <item>200</item>  <!-- 200 -->
-        <item>235</item>  <!-- 250 -->
-        <item>245</item>  <!-- 512; maximum value. 255 on the f5121 washes out colors it's so bright -->
+        <item>185</item>  <!-- 250 -->
+        <item>240</item>  <!-- 512; maximum value. 255 on the f5121 washes out colors it's so bright -->
      </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
